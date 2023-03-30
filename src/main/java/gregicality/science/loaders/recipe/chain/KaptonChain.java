@@ -28,7 +28,7 @@ public class KaptonChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .duration(120).EUt(VA[MV]).buildAndRegister();
 
-        // C6H2(CH3)4 + 12O → C6H2(C2O3)2 + 6H2O
+        // C6H2(CH3)4 + 12O -> C6H2(C2O3)2 + 6H2O
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Durene, 4)
                 .fluidInputs(Oxygen.getFluid(2000))

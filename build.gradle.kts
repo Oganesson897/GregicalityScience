@@ -78,6 +78,17 @@ repositories {
         name = "CTM"
         setUrl("https://maven.tterrag.com/")
     }
+    maven {
+        name = "Curse Maven"
+        setUrl("https://cursemaven.com/")
+    }
+    maven {
+        name = "Modrinth"
+        setUrl("https://api.modrinth.com/maven")
+    }
+    flatDir {
+        dir("libs")
+    }
 }
 
 dependencies {
@@ -91,8 +102,14 @@ dependencies {
     "deobfCompile"("CraftTweaker2:CraftTweaker2-MC$strippedVersion-Main:${config["crafttweaker.version"]}")
     "deobfCompile"("team.chisel.ctm:CTM:MC$mcVersion-${config["ctm.version"]}")
 
-    "provided"(files("libs/gregtech-$mcVersion-${config["gregtech.version"]}.jar"))
-    "provided"(files("libs/GregicalityMultiblocks-$mcVersion-${config["gcym.version"]}.jar"))
+    "deobfCompile"("maven.modrinth:gregtech-ce-unofficial:${config["ceu.version"]}")
+    "deobfCompile"("curse.maven:gregicality-multiblocks-564858:${config["gcym.version"]}")
+
+    "implementation" ("libs:groovyscript-0.4.0")
+    "deobfCompile"("maven.modrinth:endercore:${config["ender.version"]}")
+
+    //"provided"(files("libs/gregtech-$mcVersion-${config["gregtech.version"]}.jar"))
+    //"provided"(files("libs/GregicalityMultiblocks-$mcVersion-${config["gcym.version"]}.jar"))
 
     // JUnit testing used for GitHub Actions
     "testImplementation"("junit:junit:${config["junit.version"]}")

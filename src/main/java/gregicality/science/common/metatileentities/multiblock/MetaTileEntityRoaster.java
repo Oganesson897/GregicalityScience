@@ -1,5 +1,7 @@
 package gregicality.science.common.metatileentities.multiblock;
 
+import com.google.common.base.Optional;
+import com.google.common.collect.ImmutableSet;
 import gregicality.science.api.recipes.GCYSRecipeMaps;
 import gregicality.science.api.recipes.recipeproperties.NoCoilTemperatureProperty;
 import gregicality.science.client.render.GCYSTextures;
@@ -20,6 +22,7 @@ import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
@@ -29,14 +32,13 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.common.property.IExtendedBlockState;
 import org.apache.commons.lang3.ArrayUtils;
 import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MetaTileEntityRoaster extends RecipeMapMultiblockController implements IHeatingCoil {
 
@@ -82,7 +84,7 @@ public class MetaTileEntityRoaster extends RecipeMapMultiblockController impleme
                 BlockPos blockPos = centerPos.add(x, 0, z);
                 IBlockState blockState = getWorld().getBlockState(blockPos);
                 if (blockState.getBlock() instanceof BlockFireboxCasing) {
-                    blockState = blockState.withProperty(BlockFireboxCasing.ACTIVE, isActive);
+                    blockState = ((IExtendedBlockState)blockState).withProperty(BlockFireboxCasing.ACTIVE, isActive);
                     getWorld().setBlockState(blockPos, blockState);
                 }
             }

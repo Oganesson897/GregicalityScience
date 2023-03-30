@@ -3,8 +3,11 @@ package gregicality.science.api.unification.materials;
 import gregtech.api.GTValues;
 import gregtech.api.fluids.fluidType.FluidTypes;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.ToolProperty;
 
 import static gregicality.science.api.unification.material.info.GCYSMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
@@ -443,7 +446,7 @@ public class GCYSFirstDegreeMaterials {
                 .iconSet(MaterialIconSet.DIAMOND)
                 .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, CRYSTALLIZABLE, FLAMMABLE, EXPLOSIVE, DISABLE_CRYSTALLIZATION) // to disable implosion recipes
                 .components(Boron, 1, Nitrogen, 1)
-                .toolStats(14.0F, 9.0F, 12400, 15)
+                .toolStats(new ToolProperty(14.0F, 9.0F, 12400, 15))
                 .build()
                 .setFormula("c-BN", true);
 
@@ -967,6 +970,19 @@ public class GCYSFirstDegreeMaterials {
                 .dust()
                 .color(0x9AE7AD)
                 .components(Lithium,1 , Fluorine, 1)
+                .build();
+
+        Alumina = new Material.Builder(383, "alumina")
+                .dust()
+                .color(7914475)
+                .iconSet(MaterialIconSet.METALLIC)
+                .components(Materials.Aluminium, 2, Materials.Oxygen, 3)
+                .build();
+
+        ChloroplatinicAcid = new Material.Builder(459, "chloroplatinic_acid")
+                .fluid(FluidTypes.ACID).color(16729670)
+                .flags(MaterialFlags.DISABLE_DECOMPOSITION)
+                .components(Materials.Hydrogen, 2, Materials.Platinum, 1, Materials.Chlorine, 6)
                 .build();
     }
 }

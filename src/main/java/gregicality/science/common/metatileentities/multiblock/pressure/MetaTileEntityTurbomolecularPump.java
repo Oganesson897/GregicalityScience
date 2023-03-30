@@ -55,6 +55,8 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.property.ExtendedBlockState;
+import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.fluids.FluidStack;
 
 import javax.annotation.Nonnull;
@@ -121,7 +123,7 @@ public class MetaTileEntityTurbomolecularPump extends MultiblockWithDisplayBase 
             for (BlockPos blockPos : this.variantActiveBlocks) {
                 IBlockState blockState = this.getWorld().getBlockState(blockPos);
                 if (blockState.getBlock() instanceof VariantActiveBlock) {
-                    this.getWorld().setBlockState(blockPos, blockState.withProperty(BlockFireboxCasing.ACTIVE, isActive));
+                    this.getWorld().setBlockState(blockPos, ((IExtendedBlockState)blockState).withProperty(BlockFireboxCasing.ACTIVE, isActive));
                 }
             }
         }
@@ -208,7 +210,7 @@ public class MetaTileEntityTurbomolecularPump extends MultiblockWithDisplayBase 
             }
         }
 
-        boolean state = this.isActive() && this.isWorkingEnabled() && ConfigHolder.client.casingsActiveEmissiveTextures;
+        boolean state = this.isActive() && this.isWorkingEnabled();
         if (this.lastActive != state) {
             this.lastActive = state;
             this.replaceVariantBlocksActive(this.lastActive);

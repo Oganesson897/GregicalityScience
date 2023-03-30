@@ -35,7 +35,7 @@ public class EtchingMaterialsChain {
     }
 
     private static void edp() {
-        // C6H5OH + H2O2 → C6H4(OH)2 + H2O
+        // C6H5OH + H2O2 -> C6H4(OH)2 + H2O
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Phenol.getFluid(1000))
                 .fluidInputs(HydrogenPeroxide.getFluid(1000))

@@ -64,7 +64,7 @@ public class MagneticsChain {
                 .duration(50).EUt(120).buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
-                .input(dust, Hematite)
+                .input(dust, BandedIron)//TODO Hematite
                 .output(dust, FerricOxide)
                 .duration(200).EUt(8).buildAndRegister();
 

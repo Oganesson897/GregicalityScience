@@ -3,6 +3,7 @@ package gregicality.science.api.unification.materials;
 import gregicality.science.api.unification.GCYSElements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.ToolProperty;
 
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -39,7 +40,7 @@ public class GCYSElementMaterials {
                 .color(0x72A0C1).iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .element(GCYSElements.Or)
-                .toolStats(7.0F, 25.0F, 17000, 22)
+                .toolStats(new ToolProperty(7.0F, 25.0F, 17000, 22))
                 .blastTemp(9000, BlastProperty.GasTier.HIGH)
                 .build();
 

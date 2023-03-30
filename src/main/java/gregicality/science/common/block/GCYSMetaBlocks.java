@@ -1,10 +1,7 @@
 package gregicality.science.common.block;
 
 import gregicality.science.client.render.pipe.PressurePipeRenderer;
-import gregicality.science.common.block.blocks.BlockCrucible;
-import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasing;
-import gregicality.science.common.block.blocks.BlockGCYSMultiblockCasingActive;
-import gregicality.science.common.block.blocks.BlockTransparentCasing;
+import gregicality.science.common.block.blocks.*;
 import gregicality.science.common.pipelike.pressure.BlockPressurePipe;
 import gregicality.science.common.pipelike.pressure.PressurePipeType;
 import gregtech.client.model.SimpleStateMapper;
@@ -31,6 +28,7 @@ public class GCYSMetaBlocks {
     public static BlockGCYSMultiblockCasing MULTIBLOCK_CASING;
     public static BlockGCYSMultiblockCasingActive MULTIBLOCK_CASING_ACTIVE;
     public static BlockTransparentCasing TRANSPARENT_CASING;
+    public static BlockGCYSMultiblockLightSensors LIGHT_SENSORS;
 
     private GCYSMetaBlocks() {
 
@@ -45,6 +43,8 @@ public class GCYSMetaBlocks {
         MULTIBLOCK_CASING_ACTIVE.setRegistryName("multiblock_casing_active");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
+        LIGHT_SENSORS = new BlockGCYSMultiblockLightSensors();
+        LIGHT_SENSORS.setRegistryName("light_sensors");
 
         for (PressurePipeType type : PressurePipeType.values()) {
             PRESSURE_PIPES[type.ordinal()] = new BlockPressurePipe(type);
@@ -58,6 +58,7 @@ public class GCYSMetaBlocks {
         registerItemModel(MULTIBLOCK_CASING);
         registerItemModel(MULTIBLOCK_CASING_ACTIVE);
         registerItemModel(TRANSPARENT_CASING);
+        registerItemModel(LIGHT_SENSORS);
 
         IStateMapper normalStateMapper = new SimpleStateMapper(PressurePipeRenderer.INSTANCE.getModelLocation());
         for (BlockPressurePipe pipe : PRESSURE_PIPES) {

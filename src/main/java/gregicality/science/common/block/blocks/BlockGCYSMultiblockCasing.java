@@ -22,7 +22,8 @@ public class BlockGCYSMultiblockCasing extends VariantBlock<BlockGCYSMultiblockC
     public enum CasingType implements IStringSerializable {
         SUBSTRATE("substrate"),
         ADVANCED_SUBSTRATE("advanced_substrate"),
-        DRILL_HEAD("drill_head");
+        DRILL_HEAD("drill_head"),
+        GREENHOUSE_CASING("greenhouse_casing");
 
         private final String name;
 
