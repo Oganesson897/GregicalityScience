@@ -29,10 +29,10 @@ Join our Discord [**here!**](https://discord.gg/bWSWuYvURP)
 Gregicality Science requires [**GregTech CE: Unofficial**](https://github.com/GregTechCEu/GregTech), [**Gregicality Multiblocks**](https://github.com/GregTechCEu/gregicality-multiblocks), and [**CodeChickenLib**](https://www.curseforge.com/minecraft/mc-mods/codechicken-lib-1-8).
 
 Todo:
-- [x] Support the new CEu (2.5.4-beta now)
-- [] Add the GreenHouse (Now)
-- [] Take the some ideas for Gregicality to GCYS.
-- [] Receive suggestions for the original [GitHub Issue](https://github.com/GregTechCEu/gregicality-science/issues)
-- [] Maintain the project.
+* [x] Support the new CEu (2.5.4-beta now)
+* [x] Add the GreenHouse (Now)
+* [x] Take the some ideas for Gregicality to GCYS.
+* [x] Receive suggestions for the original [GitHub Issue](https://github.com/GregTechCEu/gregicality-science/issues)
+* [x] Maintain the project.
 
 And you can open a issue at [Suggestion] Example to tell me what you want.
