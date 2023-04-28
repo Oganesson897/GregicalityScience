@@ -64,14 +64,15 @@ public class GermaniumProcessing {
                 .chancedOutput(dust, Manganese, 1000, 1000)
                 .duration(200).EUt(VA[HV]).buildAndRegister();
 
-        // GeO2 + 4HCl -> GeCl4 + 2H2O
-        CHEMICAL_BATH_RECIPES.recipeBuilder()
+        // Ge2O + 4HCl -> Ge4Cl + 2H2O
+        CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, ImpureGermaniumDioxide, 3)
                 .fluidInputs(HydrochloricAcid.getFluid(4000))
                 .chancedOutput(dust, Cadmium, 500, 1000)
                 .fluidOutputs(GermaniumTetrachloride.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
-                .duration(300).EUt(VA[HV]).buildAndRegister();
+                .duration(300).EUt(VA[HV])
+                .buildAndRegister();
 
         // GeCl4 + 2H2O -> GeO2 + 4HCl
         CHEMICAL_RECIPES.recipeBuilder()

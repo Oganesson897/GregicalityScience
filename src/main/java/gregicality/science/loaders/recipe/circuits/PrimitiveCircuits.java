@@ -45,8 +45,6 @@ public class PrimitiveCircuits {
 
         if (!GCYSConfigHolder.circuitOverrides.harderVacuumTubes) return;
 
-        removeGTCERecipes();
-
         ModHandler.addShapedRecipe("vacuum_tube_components", VACUUM_TUBE_COMPONENTS.getStackForm(),
                 "RGR", "WWW",
                 'R', new UnificationEntry(OrePrefix.stick, Steel),
@@ -84,25 +82,5 @@ public class PrimitiveCircuits {
                 .output(VACUUM_TUBE)
                 .pressure(13E-5)
                 .duration(100).EUt(16).buildAndRegister();
-    }
-
-    private static void removeGTCERecipes() {
-        ModHandler.removeRecipeByName(new ResourceLocation("gregtech:vacuum_tube"));
-
-        for (Material copper : new Material[]{Copper, AnnealedCopper}) {
-            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
-                    GLASS_TUBE.getStackForm(),
-                    OreDictUnifier.get(OrePrefix.bolt, Steel, 2),
-                    OreDictUnifier.get(OrePrefix.wireGtSingle, copper, 2),
-                    IntCircuitIngredient.getIntegratedCircuit(1));
-
-            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
-                    new ItemStack[]{
-                        GLASS_TUBE.getStackForm(),
-                        OreDictUnifier.get(OrePrefix.bolt, Steel, 2),
-                        OreDictUnifier.get(OrePrefix.wireGtSingle, copper, 2),
-                        IntCircuitIngredient.getIntegratedCircuit(1)
-                    }, new FluidStack[]{RedAlloy.getFluid(L / 8)});
-        }
     }
 }

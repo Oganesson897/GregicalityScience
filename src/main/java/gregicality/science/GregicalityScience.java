@@ -7,6 +7,7 @@ import gregicality.science.common.block.GCYSMetaBlocks;
 import gregicality.science.common.items.GCYSMetaItems;
 import gregicality.science.common.metatileentities.GCYSMetaTileEntities;
 import gregtech.api.GTValues;
+import gregtech.common.ConfigHolder;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -29,7 +30,7 @@ public class GregicalityScience {
 
     @Mod.EventHandler
     public void onModConstruction(FMLConstructionEvent event) {
-        GTValues.HT = true;
+        ConfigHolder.machines.highTierContent = true;
     }
 
     @Mod.EventHandler

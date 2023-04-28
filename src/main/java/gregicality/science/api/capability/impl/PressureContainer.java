@@ -89,11 +89,6 @@ public class PressureContainer extends MTETrait implements IPressureContainer {
         return "PressureContainer";
     }
 
-    @Override
-    public int getNetworkID() {
-        return 3;
-    }
-
     @Nullable
     @Override
     public <T> T getCapability(Capability<T> capability) {

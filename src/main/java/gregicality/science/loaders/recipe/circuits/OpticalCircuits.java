@@ -257,35 +257,5 @@ public class OpticalCircuits {
                 .output(OPTICAL_ASSEMBLY, 2)
                 .solderMultiplier(2)
                 .duration(400).EUt(VA[UHV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(OPTICAL_CIRCUIT_BOARD)
-                .input(OPTICAL_ASSEMBLY, 2)
-                .input(OPTICAL_DIODE, 8)
-                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
-                .input(PHASE_CHANGE_MEMORY, 32)
-                .input(OPTICAL_FIBER, 24)
-                .input(foil, KaptonE, 32)
-                .input(plate, Tritanium, 4)
-                .fluidInputs(SolderingAlloy.getFluid(L * 12))
-                .output(OPTICAL_COMPUTER)
-                .duration(400).EUt(614400).buildAndRegister();
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Tritanium, 2)
-                .input(OPTICAL_COMPUTER, 2)
-                .input(OPTICAL_DIODE, 8)
-                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
-                .input(PHASE_CHANGE_MEMORY, 32)
-                .input(NANO_POWER_IC, 2)
-//                .input(OPTICAL_FIBER_CABLE, 8) //TODO Optical Fiber Cable
-                .input(OPTICAL_INDUCTOR, 8)
-                .input(OPTICAL_CAPACITOR, 16)
-                .input(OPTICAL_RESISTOR, 8)
-                .input(plate, Tritanium, 8)
-                .fluidInputs(SolderingAlloy.getFluid(L * 20))
-                .fluidInputs(Kevlar.getFluid(L * 9))
-                .output(OPTICAL_MAINFRAME)
-                .duration(1200).EUt(4_800_000).buildAndRegister();
     }
 }

@@ -53,7 +53,6 @@ public class CommonProxy {
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING);
         registry.register(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE);
         registry.register(GCYSMetaBlocks.TRANSPARENT_CASING);
-        registry.register(GCYSMetaBlocks.LIGHT_SENSORS);
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(pipe);
     }
@@ -67,7 +66,6 @@ public class CommonProxy {
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.MULTIBLOCK_CASING_ACTIVE, VariantItemBlock::new));
         registry.register(createItemBlock(GCYSMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
-        registry.register(createItemBlock(GCYSMetaBlocks.LIGHT_SENSORS, VariantItemBlock::new));
 
         for (BlockPressurePipe pipe : GCYSMetaBlocks.PRESSURE_PIPES) registry.register(createItemBlock(pipe, ItemBlockPressurePipe::new));
     }

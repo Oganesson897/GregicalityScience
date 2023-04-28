@@ -201,7 +201,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
         }
 
         @Override
-        protected boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@Nonnull Recipe recipe) {
             int delta = temperature - recipe.getProperty(TemperatureProperty.getInstance(), 0);
             return GTUtility.isBetweenInclusive(0, 250, delta);
         }

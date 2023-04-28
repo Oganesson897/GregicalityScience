@@ -33,12 +33,6 @@ public class MolybdenumProcessing {
     public static void init(){
         molybdenum();
         rhenium();
-
-        if (GCYSConfigHolder.chainOverrides.disableMolybdenumProcessing) {
-            GTRecipeHandler.removeRecipesByInputs(ARC_FURNACE_RECIPES,
-                    new ItemStack[]{OreDictUnifier.get(dust, Molybdenite, 3)},
-                    new FluidStack[]{Oxygen.getFluid(4000)});
-        }
     }
 
     private static void molybdenum() {

@@ -7,7 +7,7 @@ import static gregicality.science.api.recipes.GCYSRecipeMaps.CVD_RECIPES;
 import static gregicality.science.api.unification.materials.GCYSMaterials.*;
 import static gregicality.science.common.items.GCYSMetaItems.*;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import gregtech.api.recipes.RecipeMaps;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -24,7 +24,7 @@ public class GoowareCircuits {
                 .duration(40).EUt(VA[UV]).buildAndRegister();
 
         for (FluidStack stack : new FluidStack[]{TetramethylammoniumHydroxide.getFluid(2000), EDP.getFluid(500)}) {
-            CHEMICAL_RECIPES.recipeBuilder()
+            RecipeMaps.CHEMICAL_RECIPES.recipeBuilder()
                     .input(GOOWARE_BOARD)
                     .input(foil, YttriumBariumCuprate, 48)
                     .fluidInputs(stack)
@@ -34,7 +34,7 @@ public class GoowareCircuits {
         }
 
         // Processing Unit
-        ASSEMBLER_RECIPES.recipeBuilder()
+        RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(FLUID_CELL_LARGE_STAINLESS_STEEL.getStackForm())
                 .input(plate, Naquadah, 4)
                 .input(plate, Ruridit, 2)
@@ -46,7 +46,7 @@ public class GoowareCircuits {
                 .outputs(BZ_REACTION_CHAMBER.getStackForm())
                 .duration(600).EUt(VA[UV]).buildAndRegister();
 
-        CANNER_RECIPES.recipeBuilder()
+        RecipeMaps.CANNER_RECIPES.recipeBuilder()
                 .inputs(BZ_REACTION_CHAMBER.getStackForm())
                 .fluidInputs(BZMedium.getFluid(500))
                 .outputs(NONLINEAR_CHEMICAL_OSCILLATOR.getStackForm())
@@ -54,7 +54,7 @@ public class GoowareCircuits {
 
         // Circuits
         // TODO SoC Style Recipe
-        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+        RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(GOOWARE_CIRCUIT_BOARD)
                 .input(NONLINEAR_CHEMICAL_OSCILLATOR)
                 .input(CRYSTAL_CENTRAL_PROCESSING_UNIT)
@@ -64,7 +64,7 @@ public class GoowareCircuits {
                 .output(GOOWARE_PROCESSOR, 2)
                 .duration(200).EUt(VA[UV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
-        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+        RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(GOOWARE_CIRCUIT_BOARD)
                 .input(GOOWARE_PROCESSOR, 2)
                 .input(ADVANCED_SMD_INDUCTOR, 16)
@@ -75,7 +75,8 @@ public class GoowareCircuits {
                 .solderMultiplier(2)
                 .duration(400).EUt(VA[UV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        /*
+        RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(GOOWARE_CIRCUIT_BOARD)
                 .input(GOOWARE_ASSEMBLY, 2)
                 .input(ADVANCED_SMD_DIODE, 10)
@@ -88,7 +89,8 @@ public class GoowareCircuits {
                 .output(GOOWARE_COMPUTER)
                 .duration(400).EUt(153_600).buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+
+        RecipeMaps.ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Darmstadtium, 2)
                 .input(GOOWARE_COMPUTER, 2)
                 .input(ADVANCED_SMD_DIODE, 64)
@@ -104,5 +106,6 @@ public class GoowareCircuits {
                 .fluidInputs(KaptonE.getFluid(L * 9))
                 .output(GOOWARE_MAINFRAME)
                 .duration(2000).EUt(1_200_000).buildAndRegister();
+         */
     }
 }

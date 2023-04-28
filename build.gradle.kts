@@ -86,6 +86,9 @@ repositories {
         name = "Modrinth"
         setUrl("https://api.modrinth.com/maven")
     }
+    maven {
+        setUrl("https://maven.cleanroommc.com/")
+    }
     flatDir {
         dir("libs")
     }
@@ -102,11 +105,14 @@ dependencies {
     "deobfCompile"("CraftTweaker2:CraftTweaker2-MC$strippedVersion-Main:${config["crafttweaker.version"]}")
     "deobfCompile"("team.chisel.ctm:CTM:MC$mcVersion-${config["ctm.version"]}")
 
+    "deobfCompile"("zone.rong:mixinbooter:4.2")
+
     "deobfCompile"("maven.modrinth:gregtech-ce-unofficial:${config["ceu.version"]}")
-    "deobfCompile"("curse.maven:gregicality-multiblocks-564858:${config["gcym.version"]}")
+    "deobfCompile"("maven.modrinth:gregicality-multiblocks:${config["gcym.version"]}")
 
     "implementation" ("libs:groovyscript-0.4.0")
     "deobfCompile"("maven.modrinth:endercore:${config["ender.version"]}")
+    //"deobfCompile" ("libs:EnderCore-1.12.2-0.5.76-core")
 
     //"provided"(files("libs/gregtech-$mcVersion-${config["gregtech.version"]}.jar"))
     //"provided"(files("libs/GregicalityMultiblocks-$mcVersion-${config["gcym.version"]}.jar"))

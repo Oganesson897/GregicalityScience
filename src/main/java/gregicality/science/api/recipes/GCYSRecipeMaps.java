@@ -98,37 +98,6 @@ public class GCYSRecipeMaps {
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
             .setSound(GTSoundEvents.MACERATOR);
 
-    public static final RecipeMap<SimpleRecipeBuilder> GREENHOUSE_RECIPES = new RecipeMap<>("growing_recipes", 2, 2, 1, 20, 2, 2, 1,1, new SimpleRecipeBuilder(), false)
-            //Input
-            .setSlotOverlay(false, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(false, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(false, true, true, GuiTextures.SLOT)
-            .setSlotOverlay(false, true, true, GuiTextures.SLOT)
-            //Output
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, false, true, GuiTextures.SLOT)
-            .setSlotOverlay(true, true, true, GuiTextures.SLOT)
-            .setChanceFunction(RecipeMap.DEFAULT_CHANCE_FUNCTION)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.HORIZONTAL);
-
     // Generators
 
     public static final RecipeMap<FuelRecipeBuilder> TARANIUM_REACTOR_MK1_RECIPES = new RecipeMap<>("taranium_reactor_mk1_recipes", 0, 0, 0, 0, 1, 1, 0, 0, new FuelRecipeBuilder(), false)

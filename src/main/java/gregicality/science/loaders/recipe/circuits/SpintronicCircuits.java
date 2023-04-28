@@ -172,35 +172,5 @@ public class SpintronicCircuits {
                 .output(SPINTRONIC_ASSEMBLY, 2)
                 .solderMultiplier(2)
                 .duration(400).EUt(VA[UEV]).cleanroom(CleanroomType.CLEANROOM).buildAndRegister();
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(SPINTRONIC_CIRCUIT_BOARD)
-                .input(SPINTRONIC_ASSEMBLY, 2)
-                .input(SPINTRONIC_DIODE, 8)
-                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
-                .input(SPIN_TRANSFER_TORQUE_MEMORY, 32)
-                .input(wireFine, CarbonNanotube, 24)
-                .input(foil, Fullerene, 32)
-                .input(plate, PlutoniumPhosphide, 4)
-                .fluidInputs(SolderingAlloy.getFluid(L * 12))
-                .output(SPINTRONIC_COMPUTER)
-                .duration(400).EUt(1_228_800).buildAndRegister();
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Fullerene, 2)
-                .input(SPINTRONIC_COMPUTER, 2)
-                .input(SPINTRONIC_DIODE, 8)
-                .input(NOR_MEMORY_CHIP, 16) //TODO new NOR Gate
-                .input(SPIN_TRANSFER_TORQUE_MEMORY, 32)
-                .input(NANO_POWER_IC, 2)
-                .input(cableGtSingle, CarbonNanotube, 8)
-                .input(SPINTRONIC_INDUCTOR, 8)
-                .input(SPINTRONIC_CAPACITOR, 16)
-                .input(SPINTRONIC_RESISTOR, 8)
-                .input(plate, PlutoniumPhosphide, 8)
-                .fluidInputs(SolderingAlloy.getFluid(L * 20))
-                .fluidInputs(CarbonNanotube.getFluid(L * 9))
-                .output(SPINTRONIC_MAINFRAME)
-                .duration(1200).EUt(9_600_000).buildAndRegister();
     }
 }
